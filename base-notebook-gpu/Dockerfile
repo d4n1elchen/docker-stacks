@@ -93,7 +93,8 @@ RUN conda install --quiet --yes 'tini=0.18.0' && \
 RUN conda install --quiet --yes \
     'notebook=5.7.2' \
     'jupyterhub=0.9.4' \
-    'jupyterlab=0.35.4' && \
+    'jupyterlab=0.35.4' \
+    'tornado=5.1.1' && \
     conda clean -tipsy && \
     jupyter labextension install @jupyterlab/hub-extension@^0.12.0 && \
     npm cache clean --force && \
@@ -102,10 +103,6 @@ RUN conda install --quiet --yes \
     rm -rf /home/$NB_USER/.cache/yarn && \
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER
-
-# Fix tornado version
-RUN pip uninstall --quiet --yes --no-cache-dir 'tornado' && \ 
-    pip install --quiet --no-cache-dir 'tornado==5.1.1'
 
 USER root
 
