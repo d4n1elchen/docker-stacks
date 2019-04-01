@@ -1,6 +1,6 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
-ARG BASE_CONTAINER=jolibrain/base-notebook-gpu
+ARG BASE_CONTAINER=d4n1el/base-notebook-gpu
 FROM $BASE_CONTAINER
 
 LABEL maintainer="Emmanuel Benazera <emmanuel.benazera@jolibrain.com>"
