@@ -74,3 +74,7 @@ RUN MPLBACKEND=Agg python -c "import matplotlib.pyplot" && \
     fix-permissions /home/$NB_USER
 
 USER $NB_UID
+
+# Fix tornado version
+RUN pip uninstall --quiet --yes --no-cache-dir 'tornado' && \ 
+    pip install --quiet --no-cache-dir 'tornado==5.1.1'
