@@ -1,6 +1,6 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
-ARG BASE_CONTAINER=d4n1el/scipy-notebook-gpu
+ARG BASE_CONTAINER=d4n1el/scipy-notebook-gpu:cuda10.0-cudnn7
 FROM $BASE_CONTAINER
 
 LABEL maintainer="Daniel Chen <team6612@gmail.com>"
